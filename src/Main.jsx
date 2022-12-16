@@ -85,8 +85,8 @@ export default class Main extends Component {
       isVisibleDevelopFullLink,
     } = this.state
 
-    const fullLink = `${urlPrefix}${locale}/${modelAlias || modelName}/${slug}`
-    const fullDevelopLink = `${developUrlPrefix}${locale}/${modelAlias || modelName}/${slug}`
+    const fullLink = `${urlPrefix}/${modelAlias || modelName}/${slug}`
+    const fullDevelopLink = `${developUrlPrefix}/${modelAlias || modelName}/${slug}`
 
     return (
       <div className="container">
@@ -94,7 +94,7 @@ export default class Main extends Component {
           <>
             <div className="link-wrap">
               <a href={fullLink} title={slug} target="_blank" rel="noopener noreferrer" className="preview-link">
-                Link on prod
+                Live Mode
               </a>
               <button type="button" onClick={this.handleClick()}>
                 {`${isVisibleFullLink ? 'Hide' : 'Show'} full link`}
@@ -108,7 +108,7 @@ export default class Main extends Component {
           <>
             <div className="link-wrap">
               <a href={fullDevelopLink} title={slug} target="_blank" rel="noopener noreferrer" className="preview-link">
-                Link on test server
+                Preview Mode
               </a>
               <button type="button" onClick={this.handleClick('develop')}>
                 {`${isVisibleDevelopFullLink ? 'Hide' : 'Show'} full link`}
